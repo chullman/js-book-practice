@@ -11,13 +11,16 @@ function makeCar() {
     var rand5 = Math.floor(Math.random() * 5) + 1;
     var rand6 = Math.floor(Math.random() * 2);
     var car = {
-    make: makes[rand1],
-    model: models[rand2],
-    year: years[rand3],
-    color: colors[rand4],
-    passengers: rand5,
-    convertible: convertible[rand6],
-    mileage: 0
+        make: makes[rand1],
+        model: models[rand2],
+        year: years[rand3],
+        color: colors[rand4],
+        passengers: rand5,
+        convertible: convertible[rand6],
+        mileage: 0,
+        drive: function() {
+            alert("Zoom zoom!");
+        }
     };
     return car;
 }
@@ -25,3 +28,4 @@ function makeCar() {
 var carToSell = makeCar();
 
 console.log("Your new car is a " + carToSell.year + " " + carToSell.make + " " + carToSell.model);
+carToSell.drive();
