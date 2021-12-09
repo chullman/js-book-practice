@@ -18,8 +18,19 @@ function makeCar() {
         passengers: rand5,
         convertible: convertible[rand6],
         mileage: 0,
+        started: false,
         drive: function() {
-            alert("Zoom zoom!");
+            if (this.started) {
+                alert("Zoom zoom!");
+            } else {
+                alert("You need to start the engine first.");
+            }
+        },
+        start: function() {
+            this.started = true;
+        },
+        stop: function() {
+            this.started = false;
         }
     };
     return car;
@@ -28,4 +39,7 @@ function makeCar() {
 var carToSell = makeCar();
 
 console.log("Your new car is a " + carToSell.year + " " + carToSell.make + " " + carToSell.model);
+
+carToSell.drive();
+carToSell.start();
 carToSell.drive();
